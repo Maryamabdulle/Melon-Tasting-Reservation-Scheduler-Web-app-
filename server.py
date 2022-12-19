@@ -15,7 +15,7 @@ app.secret_key = os.environ['SECRET_KEY']
 app.jinja_env.undefined= StrictUndefined
 
 
-# Homepage route to show login form
+# Routes for Homepage to show login form
 
 
 @app.route("/")
