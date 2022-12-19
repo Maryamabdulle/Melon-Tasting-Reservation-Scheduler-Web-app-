@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Melon Testing Homepage {% endblock %}
+
+
+{% block body %}
+    <h2> Log In</h2>
+    <form action="/login" method="POST">
+        <label for = "email">  Please Enter your email </label>
+        <input type="email" name="email" id="email" >
+
+        <br>
+        <input type="submit" value="Log in">
+    </form>
+
+
+{% endblock %}

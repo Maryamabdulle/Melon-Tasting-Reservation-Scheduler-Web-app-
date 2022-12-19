@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Melon Reservation Scheduler {% endblock %}
+
+{% block body %}
+
+<h2>Melon Reservation Scheduler</h2>
+    <form action="/search">
+        <label for="date">Enter the date you want to make the reservation</label> <br>
+        <input type="date" name="date" id="date" value="{{today}"><br>
+    
+
+        Enter an optiona time range for your reservation<br>
+        <label for="start">Start time</label>
+        <input type="time" name="start" id="start" ><br>
+        <label for="end"> End time </label>
+        <input type="submit" name="end" id="end"><br>
+
+        <input type="submit" value="Search">
+    </form>
+
+
+{% endblock %}
