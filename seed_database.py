@@ -47,10 +47,10 @@ for melon in melons_data:
     melon_cost=melon["melon_cost"]
     melon_picture=melon["melon_picture"]
 
-    db_melon=crud.create_melon(melon_name,melon_cost,melon_picture)
-    melons_in_db.append(db.melon)
+#     db_melon=crud.create_melon(melon_name,melon_cost,melon_picture)
+#     melons_in_db.append(db.melon)
 
-model.db.db.session.add_all(melons_in_db)
+# model.db.db.session.add_all(melons_in_db)
 
 
 #Creating tastings for database
