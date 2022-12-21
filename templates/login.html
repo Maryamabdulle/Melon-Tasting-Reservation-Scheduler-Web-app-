@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %} Log In {% endblock %}
+{% block body %}
+{% include 'dropdown_navabar.html' %}
+    {% block content %}
+
+
+<div class="container-fluid" id="login-div">
+    <form class="col-12" action="/login" method="POST">
+
+        <div class="row" style="max-width: 20%;">
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingInput" type="text" name="email" placeholder="Email">
+                <label for="floatingInput">Email</label>
+            </div>
+        </div>
+
+        <div class="row" style="max-width: 20%;">
+            <div class="form-floating mb-3">
+                <input class="form-control" id="floatingInput" type="password" name="password" placeholder="Password">
+                <label for="floatingInput">Password</label>
+            </div>
+        </div>
+
+        <div class="row" style="max-width: 10%;">
+            <button type="submit" id="login" class="btn btn-primary">Log In</button>
+        </div>
+
+        <span style="font-size: 10px;"><i>No account? <a href="/signup">Sign Up</a></i></span>
+
+    </form>
+
+
+</div>
+
+    {% endblock %}
+{% endblock %}
