@@ -1,0 +1,29 @@
+[
+    {
+    
+        "melon_name": "Cantaloupe",
+        "melon_cost": 5,
+        "melon_picture":
+        "https://ibb.co/fMW1Mnr"
+
+    },
+
+    {
+        "melon_name": "Watermelon",
+        "melon_cost": 9,
+        "melon_picture":
+
+        "https://ibb.co/Mpb84GP"
+    },
+
+        {
+            "melon_name": "Honeydew",
+            "melon_cost": 12,
+            "melon_picture":
+            "https://ibb.co/BtNhnL2"
+
+
+        }
+]
+
+
