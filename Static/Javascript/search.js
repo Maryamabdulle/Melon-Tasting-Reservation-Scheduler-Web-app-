@@ -40,7 +40,7 @@ searchButton.addEventListener("click", (evt) => {
             //Div for each individual in the loop
             const tastingDivCard = document.createElement("div");
             tastingDivCard.className = "card";
-            tastingDivCard.style = "width:18rem; background-color: #d3d3d3; border-color: black; display: inline-block; margin: 20px;";
+            tastingDivCard.style = "width:18rem; background-color: ##ededed; border-color: black; display: inline-block; margin: 20px;";
             tastingDivCard.id = "search-result";
             parentDiv.appendChild(tastingDivCard);
 
@@ -54,7 +54,7 @@ searchButton.addEventListener("click", (evt) => {
             tastingDivCard.appendChild(tastingPhoto);
             const divCardBody = document.createElement("div");
             divCardBody.className = "card-body";
-            divCardBody.style = "background-color: #d3d3d3;"
+            divCardBody.style = "background-color: ##ededed;"
             tastingDivCard.appendChild(divCardBody);
 
             //Shows the tasting name
