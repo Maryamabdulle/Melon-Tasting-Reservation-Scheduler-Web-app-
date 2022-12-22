@@ -13,8 +13,8 @@ class User (db.Model):
    __tablename__= "users"
  
    user_id = db.Column(db.Integer, primary_key=True, autoincrement= True)
-   fname=db.Column(db.String,nullable=False)
-   lname=db.Column(db.String, nullable=False)
+   first_name=db.Column(db.String,nullable=False)
+   last_name=db.Column(db.String, nullable=False)
    email = db.Column(db.String, nullable=False, unique=True)
    password=db.Column(db.String, nullable=False)
 
@@ -24,7 +24,7 @@ class User (db.Model):
    def __rep__(self):
        """Display user on the screen"""
  
-       return f"<user_id={self.user_id} name= {self.email}>"
+       return f"<user_id={self.user_id} email= {self.email}>"
  
  
 #Reservation class
@@ -36,9 +36,7 @@ class Reservation(db.Model):
    
    
    reservation_id = db.Column(db.Integer, primary_key=True, autoincrement= True)
-   date= db.Column(db.Date, nullable=False)
-   start= db.Column(db.Time, unique=True, nullable= False)
-   end= db.Column(db.Time, unique=True , nullable= False)
+   reservation_date= db.Column(db.DateTime, unique=True, nullable=False)
    user_id= db.Column(db.Integer, db.ForeignKey("user.user_id"))
    tasting_id=db.Column(db.Integer, db.ForeignKey("tastings.tasting_id"))
 
