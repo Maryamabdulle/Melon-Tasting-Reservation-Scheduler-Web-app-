@@ -3,7 +3,7 @@
 from flask import Flask, render_template, request, redirect, flash, session,jsonify, url_for
 from model import connect_to_db, db
 from jinja2 import StrictUndefined
-from datetime import datetime, date
+from datetime import datetime, timedelta 
  
 import crud
 import os
@@ -25,11 +25,11 @@ app.jinja_env.auto_reload= True
 @app.route("/")
 def homepage():
     """Show homepage with log in form"""
-    user_info=None
+    user_info= None
     return render_template("homepage.html", user_info=user_info)
 
 #User logs in
-@app.route("/login", methods=["POST"])
+@app.route("/login", methods=["GET", "POST"])
 def login():
     """Return login page.""" 
 
@@ -53,7 +53,6 @@ def login():
     #Load the page
     else:
         user_info = None
-
         return render_template("login.html", user_info = user_info)
 
 ####### Sign Up #######
@@ -124,7 +123,7 @@ def search():
         user_info = crud.all_user_info_by_email(email)
 
     else: #If user not logged in, kick back to homepage
-        flash("Log in to view profile information.", category='danger')
+        flash("Log in to view Search information.", category='danger')
         return redirect("/")
 
     return render_template("search.html", user_info = user_info)
@@ -196,15 +195,5 @@ def reservation(tasting_id):
 
 
 
-
-
-
-if __name__ == "__main__":
-    connect_to_db(app)
-
-    app.run(
-        host="0.0.0.0",
-        use_reloader=False,
-        use_debugger=False,
-        passthrough_errors=True,
-    )
+if __name__ == '__main__':
+    app.run()

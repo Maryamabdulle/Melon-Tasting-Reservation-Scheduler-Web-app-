@@ -1,17 +1,41 @@
 {% extends 'base.html' %}
-
-{% block title %} Melon Testing Homepage {% endblock %}
-
-
+{% block title %} Home {% endblock %}
 {% block body %}
-    <h2> Log In</h2>
-    <form action="/login" method="POST">
-        <label for = "email">  Please Enter your email </label>
-        <input type="email" name="email" id="email" >
+{% include 'dropdown_navabar.html' %}
+    {% block content %}
 
+<style>
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+</style>
+
+
+<div class="container-fluid">
+    <div class="row-1" style="text-align:center; padding-bottom:20px; background-color: rgba(205, 111, 111, 0.7); margin-top: 15%; margin-left: 30%; max-width: 40%; max-height: 100%;">
+        <h1 style="font-family: 'Trattatello'; font-size: 100px; padding-top:20px;">Fancy Melons</h1>
+        <h3 style="font-family: 'Arial'; font-size: 30px; padding-top:20px;">Book with us your private melon tasting today!</h3>
         <br>
-        <input type="submit" value="Log in">
-    </form>
+        <a type="click" href="/login" style="font-family: 'Arial';"><button class="btn btn-primary">Log In</button></a>
+    </div>
+    
+
+    <div class="video-wrapper">
+        <video id="background-video" autoplay muted loop poster="">
+            <source src="/static/background/video1.mp4" type="video/mp4">
+        </video>
+    </div>
 
 
+</div>
+
+    {% endblock %}
 {% endblock %}

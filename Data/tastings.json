@@ -1,13 +1,25 @@
 [
     {
-        "tasting_name": 
-        "tasting_picture":
+        "tasting_name":  "Melons World",
+        "tasting_picture":"https://ibb.co/gWd7Zvb"
+    },
 
+    {
+        "tasting_name": "Melon wow",
+        "tasting_picture": "https://ibb.co/qpcvtqK"
+    },
 
+    {
+        "tasting_name": "Melon the Best",
+        "tasting_picture":"https://ibb.co/jbM9k9L"
+    },
 
+    {
+        "tasting_name": "New Melons",
+        "tasting_picture":"https://ibb.co/8MkPJVz"
     }
 
 
 
-
+    
 ]

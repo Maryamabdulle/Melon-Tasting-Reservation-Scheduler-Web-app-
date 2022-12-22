@@ -24,7 +24,7 @@ class User (db.Model):
    def __rep__(self):
        """Display user on the screen"""
  
-       return f"<user_id={self.user_id} email= {self.email}>"
+       return f"User user_id={self.user_id} email= {self.email}>"
  
  
 #Reservation class
@@ -106,7 +106,7 @@ def connect_to_db(flask_app, db_uri="postgresql:///melon_reservations", echo=Tru
    db.app = flask_app
    db.init_app(flask_app)
  
-   print ("Connected to the db!")
+   # print ("Connected to the db!")
  
 
 
