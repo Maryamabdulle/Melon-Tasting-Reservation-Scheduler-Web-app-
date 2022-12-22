@@ -3,13 +3,12 @@
 let searchButton = document.getElementById("search");
 let clearButton = document.getElementById("clear");
 
-clearButton.addEventListener("click", () => {});
+
 clearButton.addEventListener("click", () => {
     location.reload();
 });
 
 if (document.getElementById("tasting-results").innerText == "") {
-    document.getElementById("tasting-results").innerText = "No matches found"
     document.getElementById("tasting-results").innerText = "No availbility"
 }
 
@@ -35,7 +34,7 @@ searchButton.addEventListener("click", (evt) => {
             //Div for each individual in the loop
             const tastingDivCard = document.createElement("div");
             tastingDivCard.className = "card";
-            tastingDivCard.style = "width:18rem; background-color: #d3d3d3; border-color: black; display: inline-block; margin: 20px;";
+            tastingDivCard.style = "width:18rem; background-color: #c6c6c6; border-color: black; display: inline-block; margin: 20px;";
             tastingDivCard.id = "search-result";
             parentDiv.appendChild(tastingDivCard);
             //Shows the tasting logo
@@ -48,6 +47,7 @@ searchButton.addEventListener("click", (evt) => {
             tastingDivCard.appendChild(tastingPhoto);
             const divCardBody = document.createElement("div");
             divCardBody.className = "card-body";
+            divCardBody.style = "background-color: #c6c6c6;"
             tastingDivCard.appendChild(divCardBody);
             //Shows the tasting name
             const tastingNameCardTitle = document.createElement("h5");
@@ -56,10 +56,9 @@ searchButton.addEventListener("click", (evt) => {
             divCardBody.appendChild(tastingNameCardTitle);
 
             //Reserve Button
-            const reserve = document.createElement("btn");
+
             const reserve = document.createElement("a");
             reserve.id = "reserve-button";
-            reserve.value = element.tasting_id;
             reserve.setAttribute("href", `/reservations/${element.tasting_id}`);
             reserve.className = "btn btn-primary";
             reserve.innerHTML= "Reserve";
@@ -68,26 +67,5 @@ searchButton.addEventListener("click", (evt) => {
             divCardBody.appendChild(reserve);
         })
 
-        // let reserveButton = document.getElementById("reserve-button");
-
-        // reserveButton.addEventListener("click", () => {
-
-        //     const data = {
-        //         value: reserveButton.value,
-        //         date: document.getElementById("floatingInput").value,
-        //     };
-
-        //     fetch(`/api/book`, {
-        //         method: 'POST',
-        //         body: JSON.stringify(data),
-        //         headers: {
-        //             'Content-Type': 'application/json'
-        //         },
-        //     })
-        //     .then((response) => response.json())
-        //     .then(responseData => { 
-        //         window.location.replace("/profile");
-        //     });
-        // });
     });
 });
