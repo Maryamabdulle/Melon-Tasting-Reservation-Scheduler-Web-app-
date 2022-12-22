@@ -43,7 +43,7 @@ searchButton.addEventListener("click", (evt) => {
             tastingDivCard.style = "width:18rem; background-color: ##ededed; border-color: black; display: inline-block; margin: 20px;";
             tastingDivCard.id = "search-result";
             parentDiv.appendChild(tastingDivCard);
-
+            
             //Shows the tasting logo
             const tastingPhoto = document.createElement("img");
             tastingPhoto.className = "card-img-top";
