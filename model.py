@@ -2,7 +2,7 @@
  
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
- 
+import flask 
 db= SQLAlchemy()
  
 #User class
@@ -33,7 +33,6 @@ class Reservation(db.Model):
    """Reservation infromation"""
  
    __tablename__ ="reservation"
-   
    
    reservation_id = db.Column(db.Integer, primary_key=True, autoincrement= True)
    reservation_date= db.Column(db.DateTime, unique=True, nullable=False)
@@ -98,17 +97,21 @@ class Tasting(db.Model):
 
 
 #Connect to database
- 
-def connect_to_db (flask_app, db_uri="postgresql:///melom_reservations",echo=True):
-   flask_app.config["SQLALCHEMY_DATABASE_URL"]= db_uri
-   flask_app.config["SQLALCHEMY_ECHO"]= echo
-   flask_app.config["SQLALCHEMY_TRACK_MODIFCATIONS"]= False
+
+def connect_to_db(flask_app, db_uri="postgresql:///melon_reservations", echo=True):
+   flask_app.config["SQLALCHEMY_DATABASE_URI"] = db_uri
+   flask_app.config["SQLALCHEMY_ECHO"] = echo
+   flask_app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
  
    db.app = flask_app
    db.init_app(flask_app)
  
    print ("Connected to the db!")
  
+
+
+
+
 if __name__ =="__man__":
    from server import app
  
