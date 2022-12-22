@@ -107,7 +107,7 @@ def profile():
         tasting_details_dict = {}
         tasting_details = crud.tasting_details_by_reservation(reservation.reservation_id)
         tasting_details_dict["tasting_name"] = tasting_details[0].tasting_name
-        tasting_details_dict["tasting_photo"] = tasting_details[0].tasting_photo
+        tasting_details_dict["tasting_picture"] = tasting_details[0].tasting_picture
         tasting_details_dict["tasting_date"] = reservation.reservation_date
         tasting_details_dict["tasting_time_end"] = reservation.reservation_date + timedelta(minutes=30)
         reservations.append(tasting_details_dict)
@@ -152,14 +152,14 @@ def search_API():
                 if reservation.reservation_date != date:
                     tasting_matches_dict["tasting_id"] = tasting.tasting_id
                     tasting_matches_dict["tasting_name"] = tasting.tasting_name
-                    tasting_matches_dict["tasting_photo"] = tasting.tasting_photo
+                    tasting_matches_dict["tasting_picture"] = tasting.tasting_picture
                     tasting_matches.append(tasting_matches_dict)
                 else:
                     flash("No availbility with this date.", category='danger')
 
         tasting_matches_dict["tasting_id"] = tasting.tasting_id
         tasting_matches_dict["tasting_name"] = tasting.tasting_name
-        tasting_matches_dict["tasting_photo"] = tasting.tasting_photo
+        tasting_matches_dict["tasting_picture"] = tasting.tasting_picture
         tasting_matches.append(tasting_matches_dict)
 
     #no duplicates in my results
