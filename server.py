@@ -1,4 +1,4 @@
-"""Server for melon testing reservation scheduler apps"""
+"""Server for melon tasting reservation scheduler apps"""
  
 from flask import Flask, render_template, request, redirect, flash, session,jsonify, url_for
 from model import connect_to_db, db
